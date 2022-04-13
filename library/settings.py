@@ -100,11 +100,11 @@ WSGI_APPLICATION = 'library.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.get('PSQL_DBNAME'),
-        'USER': env.get('PSQL_USERNAME'),
-        'PASSWORD': env.get('PSQL_PASS'),
-        'HOST': env.get('PSQL_HOST'),
-        'PORT': env.get('PSQL_PORT'), # 'PORT': 5432
+        'NAME': 'renata_hurtadodb',
+        'USER': 'renata_hurtado',
+        'PASSWORD': 'Renata.2198',
+        'HOST': 'postgres_db33',
+        'PORT': '5533',
     }
 }
 
