@@ -136,11 +136,11 @@ if os.environ.get('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
            'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'github_actions',
-           'USER': 'postgres',
-           'PASSWORD': 'postgres',
+           'NAME': 'renata_hurtadodb',
+           'USER': 'renata_hurtado',
+           'PASSWORD': 'Renata.2198',
            'HOST': '127.0.0.1',
-           'PORT': '5432',
+           'PORT': '5533',
         }
     }
 
