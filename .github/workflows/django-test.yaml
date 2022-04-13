@@ -20,7 +20,7 @@ jobs:
           POSTGRES_PASSWORD: Renata.2198
           POSTGRES_DB: renata_hurtadodb
         ports:
-          - 5432:5432
+          - 10033:5533
         # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     # Steps represent a sequence of tasks that will be executed as part of the job
