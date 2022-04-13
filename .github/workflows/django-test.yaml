@@ -21,7 +21,7 @@ jobs:
       DJANGO_SECRET_KEY: test-key-not-good
     services:
       postgres_main:
-        image: my-django-image33:2.0.0
+        image: postgres:14-alpine
         env:
           POSTGRES_USER: ${{ env.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
