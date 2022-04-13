@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'library.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'github_actions',
-        'USER': 'radorado',
-        'PASSWORD': 'radorado',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': 'renata_hurtadodb',
+        'USER': 'renata_hurtado',
+        'PASSWORD': 'Renata.2198',
+        'HOST': 'postgres',
+        'PORT': '5533',
     }
 }
 
@@ -116,7 +116,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
            'NAME': 'github_actions',
            'USER': 'postgres',
            'PASSWORD': 'postgres',
-           'HOST': '127.0.0.1',
+           'HOST': 'postgres',
            'PORT': '5432',
         }
     }
