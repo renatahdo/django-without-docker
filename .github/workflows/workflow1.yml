@@ -1,0 +1,35 @@
+# Puede ser el nombre que sea
+name: Django Test with PostgreSQL Example
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    # branches: [main, newBranch]
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+#simple build puede llamarse como sea.
+  simple_build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+        uses: actions/checkout@v3
+        # with:
+        #   ref: main
+          # Checkout with pytest branch
+      - name: Create docker network
+        run: |
+          docker network create -d bridge our-library-net
+      - name: Build django image
+        run: |
+          docker build -t my-django-image33:2.0.0 .
+      - name: Run docker postgres
+        run: |
+          docker-compose --env-file .env.stg up -d --build postgres_db33
+      - name: Run django container
+        run: |
+          docker-compose --env-file .env.stg up -d --build web33
