@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'library.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'renata_hurtadodb',
-        'USER': 'renata_hurtado',
-        'PASSWORD': 'Renata.2198',
+        'NAME': 'github_actions',
+        'USER': 'radorado',
+        'PASSWORD': 'radorado',
         'HOST': '127.0.0.1',
-        'PORT': '5533',
+        'PORT': '5432',
     }
 }
 
