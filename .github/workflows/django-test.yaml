@@ -12,22 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # Add in environment variables for the entire "build" job
-    env:
-      POSTGRES_USER: renata_hurtado
-      POSTGRES_PASSWORD: Renata.2198
-      POSTGRES_HOST: postgres_db33
-      POSTGRES_DB: renata_hurtadodb
-      POSTGRES_PORT: 5533
-      DJANGO_SECRET_KEY: test-key-not-good
     services:
       postgres:
-        image: postgres:14-alpine
+        image: postgres:latest
         env:
-          POSTGRES_USER: renata_hurtado
-          POSTGRES_PASSWORD: Renata.2198
-          POSTGRES_DB: renata_hurtadodb
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_actions
         ports:
-          - 10033:5533
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
