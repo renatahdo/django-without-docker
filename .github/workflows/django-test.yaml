@@ -20,19 +20,15 @@ jobs:
       POSTGRES_PORT: 5533
       DJANGO_SECRET_KEY: test-key-not-good
     services:
-      postgres_main:
+      postgres:
         image: postgres:14-alpine
         env:
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+          POSTGRES_USER: renata_hurtado
+          POSTGRES_PASSWORD: Renata.2198
+          POSTGRES_DB: renata_hurtadodb
         ports:
           - 10033:5533
-        options: >-
-          --health-cmd pg_isready 
-          --health-interval 10s 
-          --health-timeout 5s 
-          --health-retries 5
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -50,4 +46,3 @@ jobs:
         run: python manage.py migrate
       - name: Run tests
         run: python manage.py test
-        
