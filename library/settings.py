@@ -140,7 +140,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
            'USER': 'renata_hurtado',
            'PASSWORD': 'Renata.2198',
            'HOST': '127.0.0.1',
-           'PORT': '5533',
+           'PORT': '5432',
         }
     }
 
